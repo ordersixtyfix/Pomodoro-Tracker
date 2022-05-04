@@ -36,28 +36,20 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
 	
 	
 	
-    int min,sec,st,i=0,tmp,tmpb,minb,secb;
+    int sec=1500,secb=300,st,i=0;
     
-    cout<< "Enter the study time in minutes"<<endl;
-    cin >> min;
-    
-    cout<< "Enter the number of studies"<<endl;
+   
+    cout<< "Enter the number of study sessions"<<endl;
     cin >> st;
 
-    cout<< "Enter the break time in minutes"<<endl;
-    cin >> minb;
     cout << "\x1B[2J\x1B[H";
     
-    secb = minb*60;
-    sec = min*60;
-    tmpb = secb;
-    tmp = sec;
-    system("(speaker-test -t sine -f 1400)& pid=$!; sleep 0.2s; kill -9 $pid");
-    system("(speaker-test -t sine -f 1400)& pid=$!; sleep 0.2s; kill -9 $pid");
+    system("(speaker-test -t sine -f 600)& pid=$!; sleep 0.2s; kill -9 $pid");
+	system("(speaker-test -t sine -f 800)& pid=$!; sleep 0.2s; kill -9 $pid");
     
     while(i<st){
-		sec = tmp;
-		secb = tmpb;
+		sec = 1500;
+		secb = 300;
 		while(sec>= 1){
 			cout<< "STUDY TIME" << endl;
 			cout<<"Counter in seconds: "<<sec<<" : " +getPresentDateTime()<<endl;
@@ -83,5 +75,3 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
 		cout << "BREAK TIME IS OVER" << endl;
 	}	
 }
-
-
