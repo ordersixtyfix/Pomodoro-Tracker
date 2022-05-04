@@ -45,7 +45,7 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
     cout << "\x1B[2J\x1B[H";
     
     system("(speaker-test -t sine -f 600)& pid=$!; sleep 0.2s; kill -9 $pid");
-	system("(speaker-test -t sine -f 800)& pid=$!; sleep 0.2s; kill -9 $pid");
+    system("(speaker-test -t sine -f 800)& pid=$!; sleep 0.2s; kill -9 $pid");
     
     while(i<st){
 		sec = 1500;
@@ -69,8 +69,9 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
 		
 			
 		}
-		system("(speaker-test -t sine -f 1400)& pid=$!; sleep 0.2s; kill -9 $pid");
-		system("(speaker-test -t sine -f 1400)& pid=$!; sleep 0.2s; kill -9 $pid");
+		system("(speaker-test -t sine -f 600)& pid=$!; sleep 0.2s; kill -9 $pid");
+    		system("(speaker-test -t sine -f 800)& pid=$!; sleep 0.2s; kill -9 $pid");
+    
 		i++;
 		cout << "BREAK TIME IS OVER" << endl;
 	}	
