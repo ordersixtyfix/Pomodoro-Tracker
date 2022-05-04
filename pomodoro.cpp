@@ -53,7 +53,7 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
     tmpb = secb;
     tmp = sec;
     system("(speaker-test -t sine -f 1400)& pid=$!; sleep 0.2s; kill -9 $pid");
-	system("(speaker-test -t sine -f 1400)& pid=$!; sleep 0.2s; kill -9 $pid");
+    system("(speaker-test -t sine -f 1400)& pid=$!; sleep 0.2s; kill -9 $pid");
     
     while(i<st){
 		sec = tmp;
@@ -83,3 +83,5 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
 		cout << "BREAK TIME IS OVER" << endl;
 	}	
 }
+
+
