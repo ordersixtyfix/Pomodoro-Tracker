@@ -31,12 +31,12 @@ int main()
    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝              
                                                                        )" << endl;
 cout << "Author : ordersixtyfix" << endl;
-cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
+cout << "Study starts with 2 beep sound. Ends with 1 long beep and session ends with 3 beep sound\n" << endl;
 	
 	
 	
 	
-    int sec=1500,secb=300,st,i=0;
+    int sec=5,secb=5,st,i=0;
     
    
     cout<< "Enter the number of study sessions"<<endl;
@@ -48,8 +48,8 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
     system("(speaker-test -t sine -f 800)& pid=$!; sleep 0.2s; kill -9 $pid");
     
     while(i<st){
-		sec = 1500;
-		secb = 300;
+		sec = 5;
+		secb = 5;
 		while(sec>= 1){
 			cout<< "STUDY TIME" << endl;
 			cout<<"Counter in seconds: "<<sec<<" : " +getPresentDateTime()<<endl;
@@ -59,6 +59,13 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
 			cout << "\x1B[2J\x1B[H";
 		}
 		cout << "END OF POMODORO" << endl;
+			if(i==st-1){
+				cout << "END OF SESSION" << endl;
+				system("(speaker-test -t sine -f 444)& pid=$!; sleep 0.2s; kill -9 $pid");
+				system("(speaker-test -t sine -f 555)& pid=$!; sleep 0.2s; kill -9 $pid");
+				system("(speaker-test -t sine -f 666)& pid=$!; sleep 0.2s; kill -9 $pid");
+				break;
+		}
 		system("(speaker-test -t sine -f 900)& pid=$!; sleep 0.7s; kill -9 $pid");
 		while(secb>=1){
 			cout<< "BREAK TIME" << endl;
@@ -69,9 +76,9 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep\n" << endl;
 		
 			
 		}
+	
 		system("(speaker-test -t sine -f 600)& pid=$!; sleep 0.2s; kill -9 $pid");
-    		system("(speaker-test -t sine -f 800)& pid=$!; sleep 0.2s; kill -9 $pid");
-    
+		system("(speaker-test -t sine -f 800)& pid=$!; sleep 0.2s; kill -9 $pid");
 		i++;
 		cout << "BREAK TIME IS OVER" << endl;
 	}	
