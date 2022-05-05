@@ -31,12 +31,12 @@ int main()
    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝              
                                                                        )" << endl;
 cout << "Author : ordersixtyfix" << endl;
-cout << "Study starts with 2 beep sound. Ends with 1 long beep and session ends with 3 beep sound\n" << endl;
+cout << "Every study session starts with 2 beep sound. Break time starts with 1 long beep. Whole sessions ends with 3 beep sound.\n" << endl;
 	
 	
 	
 	
-    int sec=5,secb=5,st,i=0;
+    int sec=1500,secb=300,st,i=0;
     
    
     cout<< "Enter the number of study sessions"<<endl;
@@ -48,8 +48,8 @@ cout << "Study starts with 2 beep sound. Ends with 1 long beep and session ends 
     system("(speaker-test -t sine -f 800)& pid=$!; sleep 0.2s; kill -9 $pid");
     
     while(i<st){
-		sec = 5;
-		secb = 5;
+		sec = 1500;
+		secb = 300;
 		while(sec>= 1){
 			cout<< "STUDY TIME" << endl;
 			cout<<"Counter in seconds: "<<sec<<" : " +getPresentDateTime()<<endl;
